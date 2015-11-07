@@ -1,3 +1,4 @@
+ruby '2.2.3'
 source 'https://rubygems.org'
 
 gem 'rails', github: "rails/rails"
@@ -20,9 +21,16 @@ gem 'puma'
 gem 'readthis'
 gem 'hiredis'
 gem 'sidekiq'
+gem 'whois'
+
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'pry'
+  gem 'rspec-rails'
+  gem 'fabrication'
 end
 
 group :development do
