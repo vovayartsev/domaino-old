@@ -22,6 +22,7 @@ gem 'readthis'
 gem 'hiredis'
 gem 'sidekiq'
 gem 'whois'
+gem 'slim-rails'
 
 group :production do
   gem 'rails_12factor'
