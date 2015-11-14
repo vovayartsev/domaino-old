@@ -12,6 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'jquery-rails'
 gem 'turbolinks'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -23,6 +24,12 @@ gem 'hiredis'
 gem 'sidekiq'
 gem 'whois'
 gem 'slim-rails'
+
+# gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-riot'
+end
 
 group :production do
   gem 'rails_12factor'

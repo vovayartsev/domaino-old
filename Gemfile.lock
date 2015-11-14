@@ -107,6 +107,7 @@ GIT
 
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     builder (3.2.2)
     celluloid (0.17.2)
@@ -170,6 +171,7 @@ GEM
     puma (2.15.3)
     rack-test (0.6.3)
       rack (>= 1.0)
+    rails-assets-riot (2.3.0)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -253,6 +255,7 @@ DEPENDENCIES
   puma
   rack!
   rails!
+  rails-assets-riot!
   rails_12factor
   readthis
   rspec-rails
