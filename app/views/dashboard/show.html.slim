@@ -1,1 +1,11 @@
-h2.ui.dividing.header Notification Settings
+h2.ui.header
+  i.ui.circular.alarm.icon
+  .content Notifications
+= render 'notification_settings'
+
+.ui.hidden.divider
+
+h2.ui.header
+  i.ui.circular.list.icon
+  .content Monitored Domains
+= render 'domains_table'

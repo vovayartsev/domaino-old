@@ -1,0 +1,58 @@
+table.ui.celled.table
+  thead
+    tr
+      th
+        | Name
+      th
+        | Status
+      th
+        | Edit
+  tbody
+    tr
+      td
+        | John
+      td
+        | No Action
+      td.selectable
+        a[href="#"]
+          | Edit
+    tr
+      td
+        | Jamie
+      td
+        | Approved
+      td.selectable
+        a[href="#"]
+          | Edit
+    tr
+      td
+        | Jill
+      td
+        | Denied
+      td.selectable
+        a[href="#"]
+          | Edit
+    tr.warning
+      td
+        | John
+      td
+        | No Action
+      td.selectable.warning
+        a[href="#"]
+          | Requires change
+    tr
+      td
+        | Jamie
+      td.positive
+        | Approved
+      td.selectable.positive
+        a[href="#"]
+          | Approve
+    tr
+      td
+        | Jill
+      td.negative
+        | Denied
+      td.selectable.negative
+        a[href="#"]
+          | Remove
