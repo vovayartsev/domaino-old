@@ -2,9 +2,18 @@ doctype html
 html
   head
     title Domaino Dashboard
-    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.8/semantic.min.css"
+    = stylesheet_link_tag "application", media: "all"
+    = javascript_include_tag "application"
+    = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.8/semantic.min.js"
     = csrf_meta_tags
 
 body
-  = yield
+  = render 'boomerang'
+  .main.ui.divided.grid.container
+    .row
+      .twelve.wide.column
+        = yield
+      .four.wide.column
+        = render 'sidebar'
+

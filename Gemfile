@@ -5,13 +5,13 @@ gem 'rails', github: "rails/rails"
 gem 'sprockets-rails', github: "rails/sprockets-rails"
 gem 'sprockets', github: "rails/sprockets"
 gem 'sass-rails', github: "rails/sass-rails"
+gem 'coffee-rails', github: 'rails/coffee-rails'
 gem 'arel', github: "rails/arel"
 gem 'rack', github: "rack/rack"
 
 gem 'uglifier', '>= 1.3.0'
 
 gem 'jquery-rails'
-gem 'turbolinks'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -24,8 +24,6 @@ gem 'hiredis'
 gem 'sidekiq'
 gem 'whois'
 gem 'slim-rails'
-
-# gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-riot'

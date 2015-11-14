@@ -1,3 +1,15 @@
 // Place all the styles related to the dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.boomerang-placeholder {
+  height: 50px;
+}
+
+.tall.rail {
+  min-height: 400px;
+}
+
+.main.container {
+  min-height: 400px;
+  width: 600px;
+}
