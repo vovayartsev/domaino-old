@@ -1,3 +1,5 @@
+= raw render 'domains_table_tag'
+
 h2.ui.header
   i.ui.circular.alarm.icon
   .content Notifications
@@ -10,9 +12,8 @@ h2.ui.header
   i.ui.circular.list.icon
   .content Monitored Domains
 
-= render 'domains_table'
+= riot_tag 'domains-table'
 
 javascript:
-  Backend.watch("#{@domain.id}").then(function (obj) {
-    console.log(obj);
-  });
+  riot.mount('domains-table', Backend);
+  Backend.watch("#{@portal.id}");

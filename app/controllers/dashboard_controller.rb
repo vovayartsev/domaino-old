@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
   def show
-    @domain = Domain.first
+    @portal = Portal.first
   end
 end

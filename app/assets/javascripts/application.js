@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require riot
+//= require riot/riot+compiler
 //= require rethink_client
 //= require backend
-//= require_tree .
+

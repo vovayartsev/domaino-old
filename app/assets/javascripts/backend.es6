@@ -1,7 +1,6 @@
 'use strict';
 window.Backend = (function () {
-
-  var options = {
+  var connectionOptions = {
     host: 'fbae7f61-dockhero.node.tutum.io',       // hostname of the websocket server
     port: 8015,              // port number of the websocket server
     path: '/',               // HTTP path to websocket route
@@ -11,19 +10,17 @@ window.Backend = (function () {
     //simulatedLatencyMs: 100, // wait 100ms before sending each message (optional)
   };
 
+  var backend = riot.observable();
 
-  return {
-    watch: function (domainId) {
-      return new Promise((resolve) => {
-        RethinkdbWebsocketClient.connect(options).then(function (conn) {
-          r.table('domains').get(domainId).changes().run(conn, function (err, cursor) {
-            cursor.each((_, record) => {
-              resolve(record.new_val);
-            });
-          });
+  backend.watch = function (portalId) {
+    RethinkdbWebsocketClient.connect(connectionOptions).then(function (conn) {
+      r.table('portals').get(portalId).changes().run(conn, function (err, cursor) {
+        cursor.each((_, record) => {
+          backend.trigger('changed', record.new_val);
         });
       });
-    }
+    });
   };
 
+  return backend;
 })();

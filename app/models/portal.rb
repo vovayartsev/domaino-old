@@ -1,6 +1,7 @@
-class Domain
+class Portal
   include NoBrainer::Document
   include NoBrainer::Document::Timestamps
 
-  field :name, :type => String
+  field :domains, type: Array
+  field :progress, type: Integer
 end
