@@ -18,3 +18,4 @@
 !/tmp/.keep
 .env
 .idea
+node_modules

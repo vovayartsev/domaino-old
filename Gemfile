@@ -8,6 +8,7 @@ gem 'sass-rails', github: "rails/sass-rails"
 gem 'coffee-rails', github: 'rails/coffee-rails'
 gem 'arel', github: "rails/arel"
 gem 'rack', github: "rack/rack"
+gem 'babel-transpiler'
 
 gem 'uglifier', '>= 1.3.0'
 
@@ -16,7 +17,6 @@ gem 'jquery-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'pg'
 gem 'oj'
 gem 'puma'
 gem 'readthis'
@@ -24,6 +24,7 @@ gem 'hiredis'
 gem 'sidekiq'
 gem 'whois'
 gem 'slim-rails'
+gem 'nobrainer'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-riot'
@@ -37,6 +38,7 @@ group :development, :test do
   gem 'pry'
   gem 'rspec-rails'
   gem 'fabrication'
+  gem 'dotenv-rails'
 end
 
 group :development do

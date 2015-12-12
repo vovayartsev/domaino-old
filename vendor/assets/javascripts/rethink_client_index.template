@@ -1,0 +1,7 @@
+// Browserify this file to create vendor/assets/javascripts/rethink_client.js
+
+window.RethinkdbWebsocketClient = require('rethinkdb-websocket-client');
+window.r = window.RethinkdbWebsocketClient.rethinkdb;
+
+// In case you want bluebird, which is bundled with the rethinkdb driver
+window.Promise = RethinkdbWebsocketClient.Promise;

@@ -22,3 +22,20 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+## RethinkDB
+
+```
+rethinkdb:
+  image: anapsix/rethinkdb:latest
+  ports:
+    - "8080:8080"
+    - "28015:28015"
+    - "29015:29015"
+websockify:
+  image: siboulet/websockify:latest
+  command: '8015 rethinkdb:28015'
+  ports:
+    - "8015:8015"
+```
