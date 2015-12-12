@@ -14,9 +14,13 @@ window.Backend = (function () {
 
   return {
     watch: function (domainId) {
-      RethinkdbWebsocketClient.connect(options).then(function (conn) {
-        r.table('domains').get(domainId).changes().run(conn, function (err, cursor) {
-          cursor.each(console.log.bind(console));
+      return new Promise((resolve) => {
+        RethinkdbWebsocketClient.connect(options).then(function (conn) {
+          r.table('domains').get(domainId).changes().run(conn, function (err, cursor) {
+            cursor.each((_, record) => {
+              resolve(record.new_val);
+            });
+          });
         });
       });
     }

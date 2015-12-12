@@ -2,57 +2,25 @@ table.ui.celled.table
   thead
     tr
       th
-        | Name
+        | Domain Name
       th
-        | Status
+        | DNS Status
       th
-        | Edit
+        | SSL Status
   tbody
     tr
       td
-        | John
-      td
-        | No Action
-      td.selectable
-        a[href="#"]
-          | Edit
-    tr
-      td
-        | Jamie
-      td
-        | Approved
-      td.selectable
-        a[href="#"]
-          | Edit
-    tr
-      td
-        | Jill
-      td
-        | Denied
-      td.selectable
-        a[href="#"]
-          | Edit
-    tr.warning
-      td
-        | John
-      td
-        | No Action
-      td.selectable.warning
-        a[href="#"]
-          | Requires change
-    tr
-      td
-        | Jamie
+        a href="#" google.com
       td.positive
-        | Approved
-      td.selectable.positive
-        a[href="#"]
-          | Approve
+        | Valid until 01/05/2016
+      td.warning
+        | Expires in 2 weeks
+
     tr
       td
-        | Jill
+        a href="#" apple.com
       td.negative
-        | Denied
-      td.selectable.negative
-        a[href="#"]
-          | Remove
+        | Expired
+      td.disabled
+        | Not Installed
+

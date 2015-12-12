@@ -13,4 +13,6 @@ h2.ui.header
 = render 'domains_table'
 
 javascript:
-  Backend.watch("#{@domain.id}");
+  Backend.watch("#{@domain.id}").then(function (obj) {
+    console.log(obj);
+  });
