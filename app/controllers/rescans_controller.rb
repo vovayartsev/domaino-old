@@ -1,6 +1,7 @@
 class RescansController < ApplicationController
   def create
-    sleep 1
+    RescanJob.perform_later
+    sleep 0.5
     render json: {status: 'OK'}
   end
 end

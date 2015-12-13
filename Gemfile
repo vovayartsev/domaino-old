@@ -25,6 +25,7 @@ gem 'sidekiq'
 gem 'whois'
 gem 'slim-rails'
 gem 'nobrainer'
+gem 'sucker_punch'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-riot'
