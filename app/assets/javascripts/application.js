@@ -18,7 +18,7 @@
 //= require_self
 
 
-$(() => {
+$(function() {
   $('.ui.modal').modal();
 });
 
