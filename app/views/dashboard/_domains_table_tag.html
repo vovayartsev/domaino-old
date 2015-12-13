@@ -1,46 +1,50 @@
 <script type="riot/tag">
 <domains-table>
 
-    <div class="ui active progress" if={inProgress}>
-      <div class="bar">
-        <div class="progress"></div>
-      </div>
-      <div class="label">Analyzing your domains...</div>
+    <div class="ui text loader {active: !loaded}">Loading</div>
+
+    <div if={ loaded }>
+
+        <div class="ui active progress" if={inProgress}>
+          <div class="bar">
+            <div class="progress"></div>
+          </div>
+          <div class="label">Analyzing your domains...</div>
+        </div>
+
+
+        <table class="ui celled table" if={! inProgress}>
+            <thead>
+            <tr>
+                <th>
+                    Domain Name
+                </th>
+                <th>
+                    DNS Status
+                </th>
+                <th>
+                    SSL Status
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr each={ domains }>
+                <td>
+                    <a href="http://{name}/" target='_blank'>{ name }</a>
+                </td>
+                <td class={ dns.class }>
+                    { dns.message }
+                </td>
+                <td class={ ssl.class }>
+                    { ssl.message }
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 
-
-    <table class="ui celled table" if={! inProgress}>
-        <thead>
-        <tr>
-            <th>
-                Domain Name
-            </th>
-            <th>
-                DNS Status
-            </th>
-            <th>
-                SSL Status
-            </th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr each={ domains }>
-            <td>
-                <a href="http://{name}/" target='_blank'>{ name }</a>
-            </td>
-            <td class={ dns.class }>
-                { dns.message }
-            </td>
-            <td class={ ssl.class }>
-                { ssl.message }
-            </td>
-        </tr>
-        </tbody>
-    </table>
-
-    this.inProgress = true;
-
     opts.on('changed', (data) => {
+      this.loaded = true;
       this.inProgress = !!data.progress;
       this.domains = data.domains;
       this.update();
