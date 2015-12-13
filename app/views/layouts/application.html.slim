@@ -2,11 +2,12 @@ doctype html
 html
   head
     title Domaino Dashboard
+    = csrf_meta_tags
+    meta name="rethinkdb-host" content=(ENV['RETHINKDB_HOST'] || ENV['DOCKHERO_HOST'])
     = stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.8/semantic.min.css"
     = stylesheet_link_tag "application", media: "all"
     = javascript_include_tag "application"
     = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.8/semantic.min.js"
-    = csrf_meta_tags
 
 body
   = render 'boomerang'

@@ -1,7 +1,7 @@
 'use strict';
 window.Backend = (function () {
   var connectionOptions = {
-    host: 'fbae7f61-dockhero.node.tutum.io',       // hostname of the websocket server
+    host: $('meta[name=rethinkdb-host]').attr('content'), // hostname of the websocket server
     port: 8015,              // port number of the websocket server
     path: '/',               // HTTP path to websocket route
     wsProtocols: ['binary'], // sub-protocols for websocket, required for websockify
