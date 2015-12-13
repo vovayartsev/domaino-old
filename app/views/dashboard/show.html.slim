@@ -9,6 +9,10 @@ h2.ui.header
 
 .ui.hidden.divider
 
+.ui.right.floated
+  button#rescan_domains.ui.right.floated.icon.button(style="margin-top: 26px")
+    i.refresh.icon
+
 h2.ui.header
   i.ui.circular.list.icon
   .content Monitored Domains
@@ -18,8 +22,8 @@ h2.ui.header
 
 javascript:
   var responseModal = riot.mount('response-handler-modal')[0];
+  var domainsTable = riot.mount('domains-table', Backend)[0];
 
-  riot.mount('domains-table', Backend);
   Backend.watch("#{@portal.id}");
 
   $('button#post_test_alert').api({
@@ -27,3 +31,4 @@ javascript:
     onResponse: responseModal.onResponse
   });
 
+  $('button#rescan_domains').api({ action: 'rescan domains'});

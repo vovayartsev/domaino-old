@@ -5,7 +5,7 @@
 
     <div if={ loaded }>
 
-        <div class="ui active progress" if={inProgress}>
+        <div name='progressbar' class="ui active progress" if={inProgress}>
           <div class="bar">
             <div class="progress"></div>
           </div>
@@ -49,7 +49,7 @@
       this.domains = data.domains;
       this.update();
       if (this.inProgress) {
-        $('.progress', this.root).progress({percent: data.progress});
+        $(this.progressbar).progress({percent: data.progress});
       }
     });
 
