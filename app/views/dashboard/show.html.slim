@@ -1,4 +1,5 @@
 = raw render 'domains_table_tag'
+= raw render 'response_handler_modal'
 
 h2.ui.header
   i.ui.circular.alarm.icon
@@ -13,7 +14,16 @@ h2.ui.header
   .content Monitored Domains
 
 = riot_tag 'domains-table'
+= riot_tag 'response-handler-modal'
 
 javascript:
+  var responseModal = riot.mount('response-handler-modal')[0];
+
   riot.mount('domains-table', Backend);
   Backend.watch("#{@portal.id}");
+
+  $('button#post_test_alert').api({
+    action: 'test alert',
+    onResponse: responseModal.onResponse
+  });
+

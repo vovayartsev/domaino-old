@@ -1,0 +1,26 @@
+<script type="riot/tag">
+<response-handler-modal>
+
+    <div id='response_modal' class="ui modal">
+      <i class="close icon"></i>
+      <div class="header">
+        { title }
+      </div>
+      <div class="content">
+        <div class="description">
+          { message }
+        </div>
+      </div>
+      <div class="actions">
+        <div class="ui close button">OK</div>
+      </div>
+    </div>
+
+    onResponse(data) {
+        $.extend(this, data);
+        this.update();
+        $(this.response_modal).modal('show');
+    }
+
+</response-handler-modal>
+</script>

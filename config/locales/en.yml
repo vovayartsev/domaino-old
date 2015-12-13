@@ -21,3 +21,8 @@
 
 en:
   hello: "Hello world"
+
+  modals:
+    test_alert:
+      title: 'Test alert sent'
+      message: 'Please check your mailbox'
