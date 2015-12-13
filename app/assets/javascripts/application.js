@@ -15,3 +15,10 @@
 //= require rethink_client
 //= require backend
 
+//= require_self
+
+
+$(() => {
+  $('.ui.modal').modal();
+});
+

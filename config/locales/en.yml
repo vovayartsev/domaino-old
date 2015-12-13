@@ -25,4 +25,4 @@ en:
   modals:
     test_alert:
       title: 'Test alert sent'
-      message: 'Please check your mailbox'
+      message: 'A test e-mail has been sent to your mailbox registered with Heroku. Be patient - delivery may take up to a minute.'

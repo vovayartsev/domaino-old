@@ -1,14 +1,17 @@
 <script type="riot/tag">
 <response-handler-modal>
 
-    <div id='response_modal' class="ui modal">
+    <div name='response_modal' class="ui small modal">
       <i class="close icon"></i>
       <div class="header">
         { title }
       </div>
-      <div class="content">
+      <div class="image content">
+        <div class="image">
+          <i class="mail outline icon"></i>
+        </div>
         <div class="description">
-          { message }
+          <p><strong>{ message }</strong></p>
         </div>
       </div>
       <div class="actions">
